@@ -1,0 +1,34 @@
+#import OS module
+import os
+#import CSV module
+import csv
+
+#Path to the data source file
+budget_data_path=os.path.join("Resources","budget_data.csv")
+
+input_file = csv.DictReader(open(budget_data_path))
+
+total_month = 0
+net_total = 0
+monthly_diff = 0
+monthly_Change_total=0
+monthly_Change_average = 0.00
+greatest_profit = 0
+greatest_loss = 0
+
+for row in input_file:
+    #print(row)
+    total_month +=1
+
+    net_total = net_total+int(row["Profit/Losses"])
+    i=0
+    monthly_diff=(int(row["Profit/Losses"][i+1]))-(int(row["Profit/Losses"][i]))
+    monthly_Change_total = monthly_Change_total + monthly_diff
+    i=i+1
+
+monthly_Change_average = monthly_Change_total / total_month
+print(f'Financial Analysis')
+print(f'-'*30)
+print("Total Months: " + str(total_month))
+print("Total: $" +str(net_total))
+print("Average Change: $"+str(monthly_Change_average))
