@@ -75,3 +75,26 @@ with open(output_path, 'w', newline='') as csv_budget_write:
     csvwriter.writerow(["Average Change: $"+str(Change_profit_loss)])
     csvwriter.writerow(['Greatest Increase in Profits: ' + profit_month +' ($' + str(greatest_profit) + ')'])
     csvwriter.writerow(['Greatest Decrease in Profits: ' + loss_month + ' ($' + str(greatest_loss) + ')'])
+
+
+#budget_data_path = "C:\\Users\\jegan\\Desktop\\Bootcamp\\RBootcamp-personal\\RBootcamp\\hw\\03-Python\\Instructions\\PyBank\\Resources\\budget_data.csv"
+
+write to file:
+-----------------------
+#Path to the data output file
+output_path = os.path.join( "Analysis", "Results_from_Analysis.txt")
+
+# Open the file using "write" mode.
+with open(output_path, 'w', newline='') as csv_budget_write:
+
+    # Initialize csv.writer
+    csvwriter = csv.writer(csv_budget_write)
+
+    #Print Finanacial Analysis summary output to the File    
+    csvwriter.writerow(['Financial Analysis'])
+    csvwriter.writerow(['-------------------'])
+    csvwriter.writerow(["Total Months: " + str(total_month)])
+    csvwriter.writerow(["Total: $" +str(net_total)])
+    csvwriter.writerow(["Average Change: $"+str(monthly_Change_average)])
+    csvwriter.writerow(['Greatest Increase in Profits: ' + greatest_profit_month +' ($' + str(greatest_profit) + ')'])
+    csvwriter.writerow(['Greatest Decrease in Profits: ' + greatest_loss_month + ' ($' + str(greatest_loss) + ')'])
