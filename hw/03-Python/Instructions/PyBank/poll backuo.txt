@@ -1,0 +1,34 @@
+#import OS module
+import os
+#import CSV module
+import csv
+
+candidates = {}
+total_votes = 0
+
+#Path to the data source file
+election_data_path=os.path.join("Resources","election_data.csv")
+
+#Open the file election_data
+with open(election_data_path) as input_data:
+
+    # CSV reader specifies delimiter and variable that holds contents
+    csv_election_read = csv.reader(input_data, delimiter=',')
+
+    # Read the header row first
+    csv_election_header = next(csv_election_read)
+    
+    # Read each row of data after the header
+    for election_row in csv_election_read:
+
+        total_votes +=1
+
+        for x in range(1,len(profit_loss_list)):
+        monthly_diff= (int(profit_loss_list[x])) - (int(profit_loss_list[x-1]))
+    
+    
+
+    print("-"*30)
+    print(f'Election Results')
+    print("-"*30)
+    print(f'Total Votes: {str(total_votes)}')
