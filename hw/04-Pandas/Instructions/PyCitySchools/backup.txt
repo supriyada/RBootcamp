@@ -1,0 +1,85 @@
+District Summary:
+-----------------
+maths_pass_percent = (student_data.loc[student_data["math_score"] >= 70,"math_score"].count()/
+                      student_data["math_score"].count())*100
+reading_pass_percent = (student_data.loc[student_data["reading_score"] >= 70,"reading_score"].count()/
+                        student_data["reading_score"].count())*100
+overall_pass_percent =(student_data.loc[(student_data["math_score"] >= 70) & 
+                      (student_data["reading_score"] >= 70),
+                      "math_score"].count()/student_data["math_score"].count())*100
+
+district_summary = [{"Total Schools":school_data["School ID"].count(),"Total Students":school_data["size"].sum(),
+                    "Total Budget":school_data["budget"].sum(),"Average Maths Score":student_data["math_score"].mean(),
+                    "Average Reading Score":student_data["reading_score"].mean(),
+                    "% Passing Maths":maths_pass_percent, "% Passing Reading":reading_pass_percent,
+                    "% Overall Passing":overall_pass_percent}]
+district_summary_df = pd.DataFrame(district_summary)
+district_summary_df["Total Students"]=district_summary_df["Total Students"].map("{:,}".format)
+district_summary_df["Total Budget"]=district_summary_df["Total Budget"].map("${:,.2f}".format)
+district_summary_df
+
+Total Schools	Total Students	Total Budget	Average Maths Score	Average Reading Score	% Passing Maths	% Passing Reading	% Overall Passing
+0	15	39,170	$24,649,428.00	78.985371	81.87784	74.980853	85.805463	65.172326
+******************************************************************************************************************************************************************
+school_summary = school_data[["school_name","type","size","budget"]]
+school_summary["Per student Budget"] = school_data["budget"]/school_data["size"]
+
+average_math_reading_score = school_data_complete.groupby("school_name").agg({'math_score':'mean','reading_score':'mean'})
+school_summary_df = pd.merge(school_summary,average_math_reading_score,on = "school_name")
+
+# %Passing in Math, Reading and overall pass
+sch_math_pass_percent = (school_data_complete.loc[school_data_complete["math_score"] >= 70,:].groupby("school_name")["math_score"].count()/school_data_complete.groupby("school_name")["math_score"].count())*100
+sch_read_pass_percent = (school_data_complete.loc[school_data_complete["reading_score"] >= 70,:].groupby("school_name")["reading_score"].count()/school_data_complete.groupby("school_name")["reading_score"].count())*100
+sch_overall_percent = (school_data_complete.loc[(school_data_complete["math_score"] >= 70)&(school_data_complete["reading_score"] >= 70),:].groupby("school_name")["math_score"].count()/school_data_complete.groupby("school_name")["math_score"].count())*100
+
+school_summary_df = pd.merge(school_summary_df,sch_math_pass_percent, on = "school_name")
+school_summary_df = pd.merge(school_summary_df,sch_read_pass_percent, on = "school_name")
+school_summary_df = pd.merge(school_summary_df,sch_overall_percent, on = "school_name")
+
+
+school_summary_df
+******************************************************************************************************************************************************************
+	school_name	type	size	budget	Per student Budget	math_score_x	reading_score_x	math_score_y	reading_score_y	math_score
+0	Huang High School	District	2917	1910635	655.0	76.629414	81.182722	65.683922	81.316421	53.513884
+1	Figueroa High School	District	2949	1884411	639.0	76.711767	81.158020	65.988471	80.739234	53.204476
+2	Shelton High School	Charter	1761	1056600	600.0	83.359455	83.725724	93.867121	95.854628	89.892107
+3	Hernandez High School	District	4635	3022020	652.0	77.289752	80.934412	66.752967	80.862999	53.527508
+4	Griffin High School	Charter	1468	917500	625.0	83.351499	83.816757	93.392371	97.138965	90.599455
+5	Wilson High School	Charter	2283	1319574	578.0	83.274201	83.989488	93.867718	96.539641	90.582567
+6	Cabrera High School	Charter	1858	1081356	582.0	83.061895	83.975780	94.133477	97.039828	91.334769
+7	Bailey High School	District	4976	3124928	628.0	77.048432	81.033963	66.680064	81.933280	54.642283
+8	Holden High School	Charter	427	248087	581.0	83.803279	83.814988	92.505855	96.252927	89.227166
+9	Pena High School	Charter	962	585858	609.0	83.839917	84.044699	94.594595	95.945946	90.540541
+10	Wright High School	Charter	1800	1049400	583.0	83.682222	83.955000	93.333333	96.611111	90.333333
+11	Rodriguez High School	District	3999	2547363	637.0	76.842711	80.744686	66.366592	80.220055	52.988247
+12	Johnson High School	District	4761	3094650	650.0	77.072464	80.966394	66.057551	81.222432	53.539172
+13	Ford High School	District	2739	1763916	644.0	77.102592	80.746258	68.309602	79.299014	54.289887
+14	Thomas High School	Charter	1635	1043130	638.0	83.418349	83.848930	93.272171	97.308869	90.948012
+******************************************************************************************************************************************************************
+sort_desc_school_summary_df=school_summary_df.sort_values(["% Overall Passing"],ascending = False)
+sort_desc_school_summary_df.head()
+******************************************************************************************************************************************************************
+sort_asc_school_summary_df=school_summary_df.sort_values(["% Overall Passing"],ascending = True)
+sort_asc_school_summary_df.head()
+******************************************************************************************************************************************************************
+grade_9_series = pd.Series(student_data["math_score"]).where(student_data["grade"] == "9th").groupby(student_data["school_name"]).mean().reset_index(name='9th')
+grade_10_series = pd.Series(student_data["math_score"]).where(student_data["grade"] == "10th").groupby(student_data["school_name"]).mean().reset_index(name='10th')
+grade_11_series = pd.Series(student_data["math_score"]).where(student_data["grade"] == "11th").groupby(student_data["school_name"]).mean().reset_index(name='11th')
+grade_12_series = pd.Series(student_data["math_score"]).where(student_data["grade"] == "12th").groupby(student_data["school_name"]).mean().reset_index(name='12th')
+
+#math_score_by_grade=pd.merge(grade_9_series,grade_10_series,on="school_name")
+#math_score_by_grade=pd.merge(math_score_by_grade,grade_11_series,on="school_name")
+#math_score_by_grade=pd.merge(math_score_by_grade,grade_12_series,on="school_name")
+
+math_score_by_grade=pd.merge(grade_9_series,grade_10_series,on="school_name").merge(grade_11_series,on="school_name").merge(grade_12_series,on="school_name")
+
+math_score_by_grade=math_score_by_grade.set_index("school_name")
+math_score_by_grade
+
+******************************************************************************************************************************************************************
+******************************************************************************************************************************************************************
+******************************************************************************************************************************************************************
+******************************************************************************************************************************************************************
+******************************************************************************************************************************************************************
+******************************************************************************************************************************************************************
+******************************************************************************************************************************************************************
