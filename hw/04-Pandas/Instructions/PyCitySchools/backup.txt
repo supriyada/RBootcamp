@@ -77,9 +77,40 @@ math_score_by_grade=math_score_by_grade.set_index("school_name")
 math_score_by_grade
 
 ******************************************************************************************************************************************************************
+grade_9_series = pd.Series(student_data["reading_score"]).where(student_data["grade"] == "9th").groupby(student_data["school_name"]).mean().reset_index(name='9th')
+grade_10_series = pd.Series(student_data["reading_score"]).where(student_data["grade"] == "10th").groupby(student_data["school_name"]).mean().reset_index(name='10th')
+grade_11_series = pd.Series(student_data["reading_score"]).where(student_data["grade"] == "11th").groupby(student_data["school_name"]).mean().reset_index(name='11th')
+grade_12_series = pd.Series(student_data["reading_score"]).where(student_data["grade"] == "12th").groupby(student_data["school_name"]).mean().reset_index(name='12th')
+
+reading_score_by_grade=pd.merge(grade_9_series,grade_10_series,on="school_name").merge(grade_11_series,on="school_name").merge(grade_12_series,on="school_name")
+
+reading_score_by_grade=reading_score_by_grade.set_index("school_name")
+reading_score_by_grade
 ******************************************************************************************************************************************************************
+bins=[0,585,630,645,680]
+spending_ranges=["<$585","$585-630","$630-645","$645-680"]
+
+school_summary_df["Spending ranges"]= pd.cut(school_summary_df["Per student Budget"],bins,labels=spending_ranges,include_lowest=True)
+
+score_by_school_spend_df=school_summary_df.groupby("Spending ranges")
+score_by_school_spend_df[['Average Math Score', 'Average Reading Score','% Passing Math', '% Passing Reading','% Overall Passing']].mean()
 ******************************************************************************************************************************************************************
+size_bins=[0,1000,2000,5000]
+size_ranges=["Small (<1000)","Medium (1000-2000)","Large (2000-5000)"]
+
+school_summary_df["School Size range"]= pd.cut(school_summary_df["Total Students"],size_bins,labels=size_ranges,include_lowest=True)
+
+score_by_school_size_df=school_summary_df.groupby("School Size range")
+score_by_school_size_df[['Average Math Score', 'Average Reading Score','% Passing Math', '% Passing Reading','% Overall Passing']].mean()
 ******************************************************************************************************************************************************************
+score_by_school_type = school_summary_df.groupby("School Type").agg({'Average Math Score':'mean', 'Average Reading Score':'mean',
+       '% Passing Math':'mean', '% Passing Reading':'mean', '% Overall Passing':'mean'})
+
+score_by_school_type
 ******************************************************************************************************************************************************************
+
+district_summary_df["Total Students"]=district_summary_df["Total Students"].map("{:,}".format)
+district_summary_df["Total Budget"]=district_summary_df["Total Budget"].map("${:,.2f}".format)
+
 ******************************************************************************************************************************************************************
 ******************************************************************************************************************************************************************
