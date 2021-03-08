@@ -1,0 +1,89 @@
+filtered_tax_df = filtered_tax_df.rename(columns={"County Share":"2020_County_Share",
+                                                 "School Share":"2020_School_Share",
+                                                 "Municipal Share":"2020_Municipal_Share",
+                                                 "County Rate":"2020_County_Rate",
+                                                 "Average Residential Property Value":"2020_Avg_Property_value(in $)"})
+
+Removing Clean Data/Housing data by values/cleaned_merged.xls
+Merge made by the 'recursive' strategy.
+ .../Housing_data_clean_merged.csv                  | 110820 ++++++++++++++++++
+ .../Housing data by values/cleaned_merged.xls      |    Bin 10845618 -> 0 bytes
+ .../Housing data by values/final_cleaned_data.xls  |    Bin 10838757 -> 10838756 bytes
+ Housing data cleaning code.ipynb                   |     28 +-
+ Property tax cleaning code.ipynb                   |    120 +
+ .../Property tax data/{ => 2010-2014}/10taxes.xls  |    Bin
+ Raw Data/Property tax data/2010-2014/11taxes.xls   |    Bin 0 -> 548864 bytes
+ Raw Data/Property tax data/2010-2014/12taxes.xls   |    Bin 0 -> 552960 bytes
+ Raw Data/Property tax data/2010-2014/13taxes.xls   |    Bin 0 -> 551936 bytes
+ Raw Data/Property tax data/2010-2014/14taxes.xls   |    Bin 0 -> 569856 bytes
+ Raw Data/Property tax data/2015-2020/15taxes.xls   |    Bin 0 -> 1698304 bytes
+ Raw Data/Property tax data/2015-2020/16taxes.xls   |    Bin 0 -> 2060800 bytes
+ Raw Data/Property tax data/2015-2020/17taxes.xls   |    Bin 0 -> 1988096 bytes
+ Raw Data/Property tax data/2015-2020/18taxes.xls   |    Bin 0 -> 1995264 bytes
+ Raw Data/Property tax data/2015-2020/19taxes.xls   |    Bin 0 -> 2315776 bytes
+ Raw Data/Property tax data/2015-2020/20taxes.xls   |    Bin 0 -> 2170880 bytes
+ 16 files changed, 110953 insertions(+), 15 deletions(-)
+ create mode 100644 Clean Data/Housing data by values/Housing_data_clean_merged.csv
+ delete mode 100644 Clean Data/Housing data by values/cleaned_merged.xls
+ create mode 100644 Property tax cleaning code.ipynb
+ rename Raw Data/Property tax data/{ => 2010-2014}/10taxes.xls (100%)
+ create mode 100644 Raw Data/Property tax data/2010-2014/11taxes.xls
+ create mode 100644 Raw Data/Property tax data/2010-2014/12taxes.xls
+ create mode 100644 Raw Data/Property tax data/2010-2014/13taxes.xls
+ create mode 100644 Raw Data/Property tax data/2010-2014/14taxes.xls
+ create mode 100644 Raw Data/Property tax data/2015-2020/15taxes.xls
+ create mode 100644 Raw Data/Property tax data/2015-2020/16taxes.xls
+ create mode 100644 Raw Data/Property tax data/2015-2020/17taxes.xls
+ create mode 100644 Raw Data/Property tax data/2015-2020/18taxes.xls
+ create mode 100644 Raw Data/Property tax data/2015-2020/19taxes.xls
+ create mode 100644 Raw Data/Property tax data/2015-2020/20taxes.xls
+
+raw_tax_data1 = f'sample2.xls'
+filtered_tax_df1 = df[['Municipality','County','County Share','School Share','Municipal Share','County Rate','Average Residential Property Value']]
+
+cleaned_df1 = filtered_tax_df1.dropna(how ='any')
+
+output_file1 = os.path.join('Clean Data','Property tax data',raw_tax_data1)
+cleaned_df1.to_excel(output_file1)
+print(output_file1)   
+cleaned_df1.head()
+
+
+Merge made by the 'recursive' strategy.
+ Clean Data/Property tax data/reqData_10taxes.csv | 567 ++++++++++++++++++++++
+ Clean Data/Property tax data/reqData_11taxes.csv | 567 ++++++++++++++++++++++
+ Clean Data/Property tax data/reqData_12taxes.csv | 567 ++++++++++++++++++++++
+ Clean Data/Property tax data/reqData_13taxes.csv | 566 ++++++++++++++++++++++
+ Clean Data/Property tax data/reqData_14taxes.csv | 587 +++++++++++++++++++++++
+ Clean Data/Property tax data/reqData_15taxes.csv | 566 ++++++++++++++++++++++
+ Clean Data/Property tax data/reqData_16taxes.csv | 566 ++++++++++++++++++++++
+ Clean Data/Property tax data/reqData_17taxes.csv | 566 ++++++++++++++++++++++
+ Clean Data/Property tax data/reqData_18taxes.csv | 566 ++++++++++++++++++++++
+ Clean Data/Property tax data/reqData_19taxes.csv | 566 ++++++++++++++++++++++
+ Clean Data/Property tax data/reqData_20taxes.csv | 566 ++++++++++++++++++++++
+ Property tax cleaning code.ipynb                 | 210 ++++++--
+ 12 files changed, 6413 insertions(+), 47 deletions(-)
+ create mode 100644 Clean Data/Property tax data/reqData_10taxes.csv
+ create mode 100644 Clean Data/Property tax data/reqData_11taxes.csv
+ create mode 100644 Clean Data/Property tax data/reqData_12taxes.csv
+ create mode 100644 Clean Data/Property tax data/reqData_13taxes.csv
+ create mode 100644 Clean Data/Property tax data/reqData_14taxes.csv
+ create mode 100644 Clean Data/Property tax data/reqData_15taxes.csv
+ create mode 100644 Clean Data/Property tax data/reqData_16taxes.csv
+ create mode 100644 Clean Data/Property tax data/reqData_17taxes.csv
+ create mode 100644 Clean Data/Property tax data/reqData_18taxes.csv
+ create mode 100644 Clean Data/Property tax data/reqData_19taxes.csv
+ create mode 100644 Clean Data/Property tax data/reqData_20taxes.csv
+
+
+
+
+
+#plt.figure(figsize=(8,3))
+#plt.scatter(x_axis,y_axis,s=[s*30 for s in grouped_county['Total County Rate'],colormap='Pastel2')
+grouped_county.plot.scatter(x = 'County',y='Avg Property value(in $)', c='Total County Rate',
+                            s=[s*50 for s in grouped_county['Total County Rate']],colormap='magma')
+plt.xticks(rotation=90)
+plt.show()
+plt.grid(True)
+plt.tight_layout()
