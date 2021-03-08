@@ -1,0 +1,66 @@
+https://www.data.gov/ FBI — Uniform Crime Reporting
+https://www.census.gov/data.html Census Data
+https://www.usa.gov/developer For Developers | USAGov
+https://mn.gov/mmb/transparency-mn/ Transparency MN
+http://www.state.mn.us/opendata/data.html MN OpenData
+http://www.opentwincities.org/data/ Data | Open Twin Cities
+http://www.minneapolismn.gov/opendata/ Open Data - City of Minneapolis
+https://healthdata.gov/ HealthData.gov
+https://www.cia.gov/library/publications/download/download-2017/index.html CIA Factbook Downloads
+https://www.cdc.gov/datastatistics/index.html Data & Statistics | CDC
+https://data.medicare.gov/data/hospital-compare# Datasets | Data.Medicare.gov
+https://seer.cancer.gov/faststats/selections.php?series=cancer Cancer.gov Stats
+https://www.bls.gov/data/ BLS.gov Data
+http://www.bea.gov/data/gdp/gross-domestic-product BEA.gov Data
+http://data.imf.org/?sk=388DFA60-1D26-4ADE-B505-A05A558D9A42&sId=1479329328660 IMF Data
+http://archive.ics.uci.edu/ml/datasets/Dow+Jones+Index UCI Machine Learning Repository: Dow Jones Index Data Set
+https://aws.amazon.com/datasets/google-books-ngrams/ Google Books Ngrams
+https://data.unicef.org/ UNICEF DATA
+https://en.wikipedia.org/wiki/Wikipedia:Database_download#English-language_Wikipedia Wikipedia:Database download
+https://towardsdatascience.com/interesting-datasets-on-kaggle-com-3a4a250b0b85 Interesting Datasets on Kaggle.com
+https://opendata.cityofnewyork.us/ NYC Open Data
+https://catalog.data.gov/dataset?groups=disasters#topic=disasters_navigation Data.gov Disasters
+https://www.unisdr.org/we/inform/disaster-statistics Disaster Statistics - UNISDR
+https://www.fema.gov/data-feeds Data Feeds | FEMA.gov
+https://digital.nhs.uk/ Home - NHS Digital
+http://www.who.int/en/ WHO | World Health Organization
+https://registry.opendata.aws/ Registry of Open Data on AWS
+https://www.google.com/publicdata/directory Google Public Data Explorer
+https://www.wikidata.org/wiki/Wikidata:Main_Page Wikidata
+http://www.pewinternet.org/datasets/ Datasets | Pew Research Center
+http://portals.broadinstitute.org/cgi-bin/cancer/datasets.cgi Cancer Datasets
+https://datahub.io/collections/stock-market-data Stock Market Data
+http://1usagov.measuredvoice.com/ 1.USA.gov Archives
+https://grouplens.org/datasets/ Datasets | GroupLens
+https://www.dataquest.io/blog/5-ways-to-find-interesting-data-sets/ 5 Ways to Find Interesting Data Sets
+https://www.kaggle.com/datasets Datasets | Kaggle
+https://github.com/niderhoff/nlp-datasets list of free/public domain datasets with text data for use in Natural Language Processing (NLP)
+https://www.quandl.com/ Financial, Economic and Alternative Data | Quandl
+https://www.tvmaze.com/api TV API | TVmaze - Add TV information to your website or app
+https://datahelpdesk.worldbank.org/knowledgebase/articles/898614-aggregate-api-queries Aggregate API Queries – World Bank Data Help Desk
+https://data.world/ Modern Data Catalog for Analysis & Teamwork | data.world
+https://dev.maxmind.com/geoip/geoip2/geolite2/ GeoLite2 Free Downloadable Databases « MaxMind Developer Site
+"https://urs.earthdata.nasa.gov/ Earthdata
+https://www.idc.com/"" IDC: The premier global market intelligence firm"
+http://www.fao.org/statistics/databases/en/ Data dissemination | FAO | Food and Agriculture Organization of the United Nations
+https://query.wikidata.org/ Wikidata Query Service
+https://www-cs-faculty.stanford.edu/~knuth/sgb.html GraphBase
+https://schema.org/ Home - schema.org
+https://qog.pol.gu.se/data/datadownloads/qogbasicdata Network Data Sources
+http://www.zanran.com/q/ Zanran Numerical Data Search
+https://www.nationmaster.com/ Global Industry Market Sizing - NationMaster
+https://www.bea.gov/data/industries Industries | U.S. Bureau of Economic Analysis (BEA)
+https://blog.bigml.com/list-of-public-data-sources-fit-for-machine-learning/ List of Public Data Sources Fit for Machine Learning | The Official Blog of BigML.com
+https://www.cancerimagingarchive.net/ The Cancer Imaging Archive (TCIA)
+https://web.stanford.edu/~hastie/ElemStatLearn//data.html Datasets for The Elements of Statistical Learning
+https://www.icpsr.umich.edu/icpsrweb/ICPSR/search/studies Search Studies
+https://stats.oecd.org/ OECD Statistics
+https://datacatalog.urban.org/search/type/dataset Urban Data Catalog
+https://www.aminer.org/citation Citation Network Dataset: DBLP+Citation, ACM Citation network | AMiner
+https://acleddata.com/#/dashboard ACLED
+https://www.socialprogress.org/ Social Progress Imperative
+
+
+https://www.quandl.com/databases/ZILLOW/data
+https://api.data.gov/list-of-apis/
+https://www.dataquest.io/blog/free-datasets-for-projects/
