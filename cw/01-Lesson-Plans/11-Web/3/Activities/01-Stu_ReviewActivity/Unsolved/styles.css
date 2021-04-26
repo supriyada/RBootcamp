@@ -1,0 +1,38 @@
+/* Add your styles here */
+
+/*Styling the navigation bar*/
+.navbar {
+    background-color:cornflowerblue;
+    padding: 10px;
+    
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 25px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.header {
+    text-align: center;
+    background-color: gray;
+    padding: 40px;
+}
+
+.post {
+    margin-left: 150px;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+
+h3 {
+    font-size: large;
+    font-weight: bold;
+
+}
