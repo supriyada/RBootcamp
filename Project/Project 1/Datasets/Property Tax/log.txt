@@ -1,9 +1,0 @@
-property tax
-https://www.nj.gov/dca/divisions/dlgs/resources/property_tax.html --> data available as xls
-
-https://interactive.taxfoundation.org/propertytax/ --> has stats map
-
-https://data.cityofnewyork.us/City-Government/Property-Tax-Rates-by-Tax-Class/7zb8-7bpk --> available as API
-
-
-https://www.state.nj.us/treasury/taxation/lpt/taxrate.shtml --> has general tax rate
