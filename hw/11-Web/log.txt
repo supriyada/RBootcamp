@@ -1,0 +1,77 @@
+drop down divider:
+<div class="dropdown-divider"></div>
+
+I am trying to load the html table from the csv file, via pandas. I have the csv file in HTML format. However when I try to embed into my HTML page I am not able to format the table. Please help me figure out the same
+
+
+<!--<iframe id = "city_table" src="table.html" width="80%" height="500" style="padding-left: 20px;">
+              #</iframe>
+               <object type="text/html" data="table.html" width="800px" height="600px" ,style = >
+                </object> 
+              <embed type="text/html" src="city_table.html" width="500" height="200">-->
+
+
+.table_css tr:nth-child(even) {
+    background-color: #eee;
+  }
+
+
+<div class="container-lg">
+            <div class="row row-cols-2">
+              <div class="col">Column</div>
+              <div class="col">Column</div>
+              <div class="col">Column</div>
+              <div class="col">Column</div>
+            </div>
+          </div>
+
+
+	<div class="container-lg" id='outer_contain'>
+              <div class="container-lg" id ="inner_contain">
+                <h3>Data </h3>
+                <hr>
+                <p>The following table includes all the data used for plotting during this project.</p>
+                <iframe id = "city_table" src="city_table.html"></iframe>
+                  
+              </div>
+            </div>
+
+
+list-style: none;
+display: inline-block;
+border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc; 
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+
+width: 15%;
+    
+    text-align: right;
+    padding: 0;
+    
+    background-color: #f2f2f2;
+    
+    margin-left: 950px; 
+    margin-top: 100px;
+    height: 57px;
+
+<a href="index.html" id ='lat_button' class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Latitude</a>
+
+#nav_bar {
+    list-style: none;
+    display: inline-block;
+}
+
+
+<li>
+                            <img src="Resources/assets/images/Fig1.png" class="img-fluid " alt="Responsive image">
+                        </li>
+                        <li>
+                            <img src="Resources/assets/images/Fig2.png" class="img-fluid " alt="Responsive image">
+                        </li>
+                        <li>
+                            <img src="Resources/assets/images/Fig3.png" class="img-fluid" alt="Responsive image">
+                        </li>
+                        <li>
+                            <img src="Resources/assets/images/Fig4.png" class="img-fluid" alt="Responsive image">
+                        </li>

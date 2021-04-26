@@ -1,0 +1,92 @@
+executable_path = {'executable_path': ChromeDriverManager().install()}
+browser = Browser('chrome', **executable_path, headless=False)
+
+headline_url = "https://redplanetscience.com/"
+browser.visit(headline_url)
+time.sleep(1)
+
+headline_html = browser.html
+soup = bs(headline_html, "html.parser")
+
+news_title = soup.find('div', class_='content_title').text
+print(news_title)
+news_p = soup.find('div', class_='article_teaser_body').text
+print(news_p)
+
+browser.quit()
+
+<div class="card-group">
+{% for item in mars_info.Mars_hemisphere %}
+  <div class="card">
+    <img src="{{item.img_url}}" class="card-img-top" alt="Mars_image">
+    <div class="card-body">
+      <p class="card-text">{{item.title}}</p>
+    </div>
+  </div>
+{% endfor %} 
+</div>
+
+{% for item in mars_info.Mars_hemisphere %}
+            <div class="card-group">
+                <div class="card border-dark" style="width: 18rem;border-width: 5px;">
+                    <img src="{{item.img_url}}" class="card-img-top" alt="Mars_image">
+                    <div class="card-body">
+                      <p class="card-text">{{item.title}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %} 
+        
+
+{% include <Mars_fact_table class="html"></Mars_fact_table> %}
+
+
+
+"""html_string = """
+    <html>
+    <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        {mars_data.Mars_fact}
+    </body>
+    </html>
+    """
+
+<!--{{mars_info.mars_fact_html_table}}-->
+                <!--{% include 'mars_info.mars_fact_html_table' %}-->
+
+    htmlfile = "Mars_fact_table.html"
+    with open(htmlfile, "w") as file_out:
+        file_out.write(html_string.format(mars_fact_html_table=mars_fact_df.to_html\
+                                      (classes="table table-hover table-striped table-responsive", \
+                                       border=1,index=True,table_id='Mars_fact_table')))"""
+
+{% for row in mars_info.mars_fact_html_table %}
+                    <tr>
+                        {% for value in row %}
+                        <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+
+<table>
+                    {{Mars_fact_table.html}}
+                </table>
+
+jinja2.exceptions.TemplateNotFound: mars_info.mars_fact_html_table
+
+<table border = 1>
+                    {% for key, value in mars_info.mars_fact_html_table.items() %}
+                
+                    <tr>
+                       <th> {{ key }} </th>
+                       <td> {{ value }} </td>
+                    </tr>
+                
+                    {% endfor %}
+                 </table>
+
+{{Mars_fact_table.html}}
