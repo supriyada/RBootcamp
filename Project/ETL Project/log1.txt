@@ -1,0 +1,5 @@
+mongodb+srv://supriyaDA:<password>@supriyada.h7evx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+mongodb+srv://supriyaDA:<password>@supriyada.h7evx.mongodb.net/test
+
+@test123

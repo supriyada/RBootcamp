@@ -1,0 +1,142 @@
+{'etag': 'ltZwik0o-SJ6T9qnHUv8UAruXe8',
+ 'items': [{'etag': '503hl29XaxuzJm7pEqfG9yaWc5A',
+            'id': 'UCdzU3DSGzyWzN2118yd9X9g',
+            'kind': 'youtube#channel',
+            'snippet': {'description': '',
+                        'localized': {'description': '',
+                                      'title': 'Abdullah AYDIN'},
+                        'publishedAt': '2007-08-24T13:54:40Z',
+                        'thumbnails': {'default': {'height': 88,
+                                                   'url': 'https://yt3.ggpht.com/ytc/AAUvwng6rBKIcqJkzooFxpiCOFn0EV9JCceXCLOwUiloAN8=s88-c-k-c0x00ffffff-no-rj',
+                                                   'width': 88},
+                                       'high': {'height': 800,
+                                                'url': 'https://yt3.ggpht.com/ytc/AAUvwng6rBKIcqJkzooFxpiCOFn0EV9JCceXCLOwUiloAN8=s800-c-k-c0x00ffffff-no-rj',
+                                                'width': 800},
+                                       'medium': {'height': 240,
+                                                  'url': 'https://yt3.ggpht.com/ytc/AAUvwng6rBKIcqJkzooFxpiCOFn0EV9JCceXCLOwUiloAN8=s240-c-k-c0x00ffffff-no-rj',
+                                                  'width': 240}},
+                        'title': 'Abdullah AYDIN'},
+            'statistics': {'hiddenSubscriberCount': False,
+                           'subscriberCount': '298',
+                           'videoCount': '39',
+                           'viewCount': '141680'}}],
+ 'kind': 'youtube#channelListResponse',
+ 'pageInfo': {'resultsPerPage': 5, 'totalResults': 1}}
+
+
+{'etag': '7EE8UWdhw8W63zHk4chlIskkyo4',
+ 'items': [{'etag': 'z4LYkMuERYtVWRdFW8k61fEyPWA',
+            'id': 'UC0UnhAG47DRyVZGVcbhAXhQ',
+            'kind': 'youtube#channel',
+            'snippet': {'country': 'MX',
+                        'customUrl': 'saultpchannel',
+                        'description': '..\n'
+                                       'Lifestyle\n'
+                                       'Society point of view\n'
+                                       'Music & Dance\n'
+                                       'Science & Technology\n'
+                                       '-\n'
+                                       'saultp@hotmail.com',
+                        'localized': {'description': '..\n'
+                                                     'Lifestyle\n'
+                                                     'Society point of view\n'
+                                                     'Music & Dance\n'
+                                                     'Science & Technology\n'
+                                                     '-\n'
+                                                     'saultp@hotmail.com',
+                                      'title': 'Saul TP Channel'},
+                        'publishedAt': '2007-02-08T20:41:20Z',
+                        'thumbnails': {'default': {'height': 88,
+                                                   'url': 'https://yt3.ggpht.com/ytc/AAUvwnhE10QP1RAwKm_reUUgEslgjg1oVRDoKr6SgP4tsw=s88-c-k-c0x00ffffff-no-rj',
+                                                   'width': 88},
+                                       'high': {'height': 800,
+                                                'url': 'https://yt3.ggpht.com/ytc/AAUvwnhE10QP1RAwKm_reUUgEslgjg1oVRDoKr6SgP4tsw=s800-c-k-c0x00ffffff-no-rj',
+                                                'width': 800},
+                                       'medium': {'height': 240,
+                                                  'url': 'https://yt3.ggpht.com/ytc/AAUvwnhE10QP1RAwKm_reUUgEslgjg1oVRDoKr6SgP4tsw=s240-c-k-c0x00ffffff-no-rj',
+                                                  'width': 240}},
+                        'title': 'Saul TP Channel'},
+            'statistics': {'hiddenSubscriberCount': False,
+                           'subscriberCount': '659',
+                           'videoCount': '105',
+                           'viewCount': '209264'}}],
+ 'kind': 'youtube#channelListResponse',
+ 'pageInfo': {'resultsPerPage': 5, 'totalResults': 1}}
+{'etag': 'OV3ySRwSAlJfv3nDYgqpYPXNHW0',
+ 'items': [{'etag': '6yqh39-Q1M6OCNLtb3RfBPGyBv0',
+            'id': 'UCXjtAvK5P3wXBGh0vbGylzg',
+            'kind': 'youtube#channel',
+            'snippet': {'country': 'BR',
+                        'description': 'Este canal é dedicado a compartilhar '
+                                       'os ensinamentos de sabedoria da '
+                                       'tradição taoísta.\n'
+                                       'Monge Tian Xin Shan é ordenado Daoshi '
+                                       'na tradição       Long Men de '
+                                       'Quanzhen, pelo mestre Cheng do '
+                                       'mosteiro      Tai Qing Gong da '
+                                       'montanha Laoshan.\n'
+                                       'Dedica-se ao cultivo do Tao por meio '
+                                       "das artes do               T'ai ji "
+                                       'taoísta, Chikung taoísta, Xiu Lian, '
+                                       'Neidanshu.\n'
+                                       'O cultivo do Tao conduz o ser humano '
+                                       'ao despertar da harmonia e equilíbrio '
+                                       'com a vida, a natureza e a '
+                                       'espiritualidade. O taoísmo é um '
+                                       'caminho de auto cultivo e dedica se a '
+                                       'simplicidade, compaixão, virtude e '
+                                       'sabedoria.\n'
+                                       'Existem inúmeras escolas, linhagens, e '
+                                       'milhares de métodos para ao cultivo.\n'
+                                       'www.filosofiataoista.no.comunidades.net',
+                        'localized': {'description': 'Este canal é dedicado a '
+                                                     'compartilhar os '
+                                                     'ensinamentos de '
+                                                     'sabedoria da tradição '
+                                                     'taoísta.\n'
+                                                     'Monge Tian Xin Shan é '
+                                                     'ordenado Daoshi na '
+                                                     'tradição       Long Men '
+                                                     'de Quanzhen, pelo mestre '
+                                                     'Cheng do mosteiro      '
+                                                     'Tai Qing Gong da '
+                                                     'montanha Laoshan.\n'
+                                                     'Dedica-se ao cultivo do '
+                                                     'Tao por meio das artes '
+                                                     "do               T'ai ji "
+                                                     'taoísta, Chikung '
+                                                     'taoísta, Xiu Lian, '
+                                                     'Neidanshu.\n'
+                                                     'O cultivo do Tao conduz '
+                                                     'o ser humano ao '
+                                                     'despertar da harmonia e '
+                                                     'equilíbrio com a vida, a '
+                                                     'natureza e a '
+                                                     'espiritualidade. O '
+                                                     'taoísmo é um caminho de '
+                                                     'auto cultivo e dedica se '
+                                                     'a simplicidade, '
+                                                     'compaixão, virtude e '
+                                                     'sabedoria.\n'
+                                                     'Existem inúmeras '
+                                                     'escolas, linhagens, e '
+                                                     'milhares de métodos para '
+                                                     'ao cultivo.\n'
+                                                     'www.filosofiataoista.no.comunidades.net',
+                                      'title': 'TheTVtaoista'},
+                        'publishedAt': '2009-07-09T22:03:36Z',
+                        'thumbnails': {'default': {'height': 88,
+                                                   'url': 'https://yt3.ggpht.com/ytc/AAUvwng4WP5vZSlTtsaQgd_kddRBpqL_4E9eFet9y66Bgw=s88-c-k-c0x00ffffff-no-rj',
+                                                   'width': 88},
+                                       'high': {'height': 800,
+                                                'url': 'https://yt3.ggpht.com/ytc/AAUvwng4WP5vZSlTtsaQgd_kddRBpqL_4E9eFet9y66Bgw=s800-c-k-c0x00ffffff-no-rj',
+                                                'width': 800},
+                                       'medium': {'height': 240,
+                                                  'url': 'https://yt3.ggpht.com/ytc/AAUvwng4WP5vZSlTtsaQgd_kddRBpqL_4E9eFet9y66Bgw=s240-c-k-c0x00ffffff-no-rj',
+                                                  'width': 240}},
+                        'title': 'TheTVtaoista'},
+            'statistics': {'hiddenSubscriberCount': True,
+                           'videoCount': '168',
+                           'viewCount': '82921'}}],
+ 'kind': 'youtube#channelListResponse',
+ 'pageInfo': {'resultsPerPage': 5, 'totalResults': 1}}
