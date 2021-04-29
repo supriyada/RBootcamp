@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Loan Approver</title>
+</head>
+
+<body>
+
+  <h1>Open the Chrome Inspector Console!</h1>
+
+  <script>
+
+    // @NOTE: change these to test the code with different values
+    var income = 30000;
+    var debtIncomeRatio = .5;
+    var yearsInJob = 2;
+    var criminalRecord = false;
+    var goodCredit = false;
+
+    // @TODO: Write the Conditional Statements needed to approve or deny a loan
+    // YOUR CODE HERE!
+    if (income < 30000){
+      if (debtIncomeRatio > 0.5){
+        console.log("Loan is not approved!!! more debt to income ratio")
+      }
+      else{
+        console.log("Loan is approved!!!")
+      }
+    }
+    else if (income >= 30000 && income <= 75000){
+      if (yearsInJob < 1){
+        console.log("Loan is not approved!!!")
+      }
+      else if (yearsInJob >= 1 && yearsInJob <= 5){
+        if (goodCredit === true){
+          console.log("Loan approved for good credits")
+        }
+        else{
+          console.log("Loan not approved. less yrs of experience and low credits")
+        }
+      }
+      else {
+        console.log("Loan is approved")
+      }
+    }
+    else {
+      if (criminalRecord === true){
+        console.log("Loan is not approved!!! you have criminal record")
+      }
+      else{
+        console.log("Loan is approved!!!")
+      }
+    }
+
+  </script>
+</body>
+
+</html>
