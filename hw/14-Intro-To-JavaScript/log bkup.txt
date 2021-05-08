@@ -1,0 +1,181 @@
+//*********Perfect backup
+
+//generates list of states based on country selected
+var stateList = [];
+var stateSelect = document.getElementById("state");
+function myState(){
+    var countrySel = countrySelect.value;
+
+    removeAll(stateSelect);
+
+    stateList = [];
+    var opt = document.createElement("option");
+    opt.value = "all";
+    opt.text = "All";
+    stateSelect.appendChild(opt);
+
+    var ss = tableData.map(function (stateListFn) {
+        if (stateListFn.country == countrySel){
+            var state = stateListFn.state;
+            if (!(stateList.includes(state))){
+        
+                stateList.push(state);
+                var opt = document.createElement("option");
+                opt.value = state;
+                opt.text = state.toUpperCase();
+                stateSelect.appendChild(opt);
+            }
+        }
+    })
+}
+
+//generates the list of cities based on state selected
+var cityList = [];
+var citySelect = document.getElementById("city");
+function myCity(){
+    var stateSel = stateSelect.value;
+
+    removeAll(citySelect);
+
+    cityList = [];
+    var opt = document.createElement("option");
+    opt.value = "all";
+    opt.text = "All";
+    citySelect.appendChild(opt);
+    
+    var cs = tableData.map(function (cityListFn) {
+        if (cityListFn.state == stateSel ){
+            var city = cityListFn.city;
+            if (!(cityList.includes(city))){
+        
+                cityList.push(city);
+                var opt = document.createElement("option");
+                opt.value = city;
+                opt.text = toTitleCase(city);
+                citySelect.appendChild(opt);
+            }
+        }
+    })
+}
+
+//generate the shape of UFO's spotted
+var shapeList = [];
+var shapeSelect = document.getElementById("shape");
+function myShape(){
+    
+    var citySel = citySelect.value;
+
+    removeAll(shapeSelect);
+
+    shapeList = [];
+    var opt = document.createElement("option");
+    opt.value = "all";
+    opt.text = "All";
+    shapeSelect.appendChild(opt);
+    
+    var shapeS = tableData.map(function (shapeListFn) {
+        if (shapeListFn.city == citySel){
+            var shape = shapeListFn.shape;
+            if (!(shapeList.includes(shape))){
+        
+                shapeList.push(shape);
+                var opt = document.createElement("option");
+                opt.value = shape;
+                opt.text = toTitleCase(shape);
+                shapeSelect.appendChild(opt);
+            }
+        }
+    })
+}
+
+
+onchange="myCity()"
+onchange="myShape()"
+
+
+ var ss = tableData.map(function (stateListFn) {
+            if (element.name === item.value){
+                
+            }
+            else{
+            if(stateListFn[optionChoosen] == optCheck){
+                var state = stateListFn[option];
+                console.log(option);
+                if (!(sampleList.includes(state))){
+                    console.log("Inside state list");
+                    sampleList.push(state);
+                    var opt = document.createElement("option");
+                    opt.value = state;
+                    opt.text = state.toUpperCase();
+                    item.appendChild(opt);
+                }
+                            
+            }}
+        })
+
+ if (!(isBlank(country))){
+        if((!(isBlank(state))) && (state != "all")){
+            if((!(isBlank(city))) && (city != "all")){
+                if((!(isBlank(shape))) && (shape != "all")){
+                    if(!(isBlank(filterDate))){
+                        var filteredTable = tableData.filter(ufoSightings => 
+                            ((ufoSightings.datetime === filterDate) && (ufoSightings.country === country)
+                            && (ufoSightings.state === state) && (ufoSightings.city === city)
+                            && (ufoSightings.shape === shape)));
+                    }
+                    else{
+                        var filteredTable = tableData.filter(ufoSightings => 
+                            ((ufoSightings.country === country)
+                            && (ufoSightings.state === state) && (ufoSightings.city === city)
+                            && (ufoSightings.shape === shape)));
+                    }
+                 
+                }
+                else if((!(isBlank(city))) && (city === "all")){
+                    var filteredTable = tableData.filter(ufoSightings => ((ufoSightings.country === country)) 
+                    && (ufoSightings.state === state) && (ufoSightings.city === city));
+                    
+                }
+                else{
+                    var filteredTable = tableData.filter(ufoSightings => ((ufoSightings.country === country))
+                    && (ufoSightings.state === state) && (ufoSightings.city === city));
+                }          
+            }
+            else if((!(isBlank(city))) && (city === "all")){
+                var filteredTable = tableData.filter(ufoSightings => ((ufoSightings.country === country)) 
+                && (ufoSightings.state === state));
+            }
+            else{
+                var filteredTable = tableData.filter(ufoSightings => ((ufoSightings.country === country))
+                && (ufoSightings.state === state));
+            }
+        
+        }
+        else if((!(isBlank(state))) && (state === "all")){
+            var filteredTable = tableData.filter(ufoSightings => ((ufoSightings.country === country)));
+        }
+        else{
+            var filteredTable = tableData.filter(ufoSightings => ((ufoSightings.country === country)));
+        }
+    }
+    else{
+        tableLoad();
+    }
+
+    if (filteredTable == null){
+        console.log("No records found");
+    }
+    else{
+    //console.log(filteredTable);
+        ufoTableBody.html("");
+
+        filteredTable.forEach( (ufoReport) =>{
+            var ufoRow = ufoTableBody.append("tr");
+        
+            Object.entries(ufoReport).forEach(([key,value]) => {
+                //console.log(key,value);
+                var ufoCell = ufoRow.append("td");
+                ufoCell.text(value);
+            });
+        });
+    }

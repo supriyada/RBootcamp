@@ -5,6 +5,7 @@ var trace1 = {
     x: data.map(name => name.pair),
     y: data.map(name => name.greekSearchResults),
     text: data.map(name => name.greekName),
+    name: "Greek",
     type: "bar"
   };
   
@@ -13,6 +14,7 @@ var trace1 = {
     x: data.map(name => name.pair),
     y: data.map(name => name.romanSearchResults),
     text:data.map(name => name.romanName),
+    name: "Roman",
     type: "bar"
   };
   
@@ -22,7 +24,9 @@ var trace1 = {
   // Apply the group barmode to the layout
   var layout = {
     title: "Greek vs Roman gods search results",
-    barmode: "group"
+    xaxis:{title:"Paired name"},
+    yaxis:{title:"Search count"},
+    barmode: "stack"
   };
   
   // Render the plot to the div tag with id "plot"
