@@ -60,7 +60,7 @@ function renderCircles(circlesGroup, newXScale, chosenXAxis) {
 
   return circlesGroup;
 }
-
+//*************added till here */
 // function used for updating circles group with new tooltip
 function updateToolTip(chosenXAxis, circlesGroup) {
 
