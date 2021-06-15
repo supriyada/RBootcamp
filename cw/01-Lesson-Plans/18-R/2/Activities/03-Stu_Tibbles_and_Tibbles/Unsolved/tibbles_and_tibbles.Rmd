@@ -1,0 +1,61 @@
+---
+title: "Tibbles and Tibbles"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE)
+```
+#### Dependency
+```{r, message=F, warning=F}
+library(tidyverse)
+```
+
+#### Create a Tibble by columns
+```{r}
+cart_rental.tb <- 
+  tibble(
+    name = c("George", "Martha","John","Abigail"),
+    age = c(12, 11, 10, 7),
+    year_left = (25 - age)
+  )
+
+cart_rental.tb
+
+```
+
+
+#### Create a Tibble by rows
+```{r}
+
+reliable_cars.tb <- tribble(
+  ~Brand, ~Least.Reliable.Model, ~Avg.Reliability.Score,
+  "Toyota", "Tacoma", "80",
+  "Lexus", "GX", "77",
+  "Kia", "Sportage", "71",
+  "Audi", "A7", "68",
+  "BMW", "i3", "62"
+)
+
+reliable_cars.tb
+
+```
+
+
+#### Add a row to a Tibble
+```{r}
+
+```
+
+
+#### Add a column to a Tibble
+```{r}
+
+```
+
+
+#### Rearrange the columns of a Tibble
+```{r}
+
+```
+

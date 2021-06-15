@@ -1,0 +1,56 @@
+#### Visualization libraries used:
+> - Packed bubble chart (`HighCharts.js`
+> - Stacked bar chart (`Plotly.js`) 
+> - Map (`leaflet.js`)
+> - Table & Line subplot s (`Plotly.js`)
+
+Front-End Pages:
+> - index.html --> has all the visualizations.
+> - OlympicData.html --> Data of a particular year.
+
+#### Data collection & transformation:
+> - Created a DB in Mongo atlas(`Olympic_Data_DB`) and collection(`athlete_record`) with the data collected from Kaggle dataset. The Medal column did not have a consistent datatype like when the Medal is "NA", it is not of string format. Hence we updated all the documents to have "None"(String datatype) in place of "NA".
+`mongodb+srv://{username}:{password}@supriyada.h7evx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+
+> - Web scraping is done(using BeautifulSoup) to collect the logo for all the summer events.The collection `logo_info` is created with Event Name, Year and logo_url collected from the scraping. The website used is:
+`https://hative.com/olympic-logos-from-1896-to-present/`
+`https://colorlib.com/wp/all-olympic-logos-1924-2022/`
+
+> - Web scraping is done(using Selenium) to collect the NOC(National Olympics Committee) code with the actual country names. The website used is:
+`https://en.wikipedia.org/wiki/List_of_IOC_country_codes`
+
+> - The collection: `athlete_record` is then updated with country name corresponding to their NOC code.
+
+#### DB Connection establishment
+connection_url = 'mongodb+srv://projectOlympics:project123@supriyada.h7evx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+client = pymongo.MongoClient(connection_url)
+Database = client.get_database('Olympics_Data_db')
+# Collection
+dataTable = Database.athlete_record
+logoTable = Database.logo_info
+
+#### Flask API routes used:
+@app.route("/")  --> default page load
+@app.route('/find/')  --> Returns Json object with data for a particular year
+@app.route('/findByYear')  --> Collects the year info onclick the card and redirects to ('/find') to fetch from db.
+@app.route('/findByCountry')  --> Returns Json object with filter conditions year & country.
+@app.route('/OlympicData', methods=['GET', 'POST'])  --> To redirect to the another html page `OlympicData.html`.
+
+#### Intermediary JS file:
+> - slider.js --> pipelines the data between database, html file & visualization script files.
+> - Queue.js --> This library invokes the route ('/find') and wait till the data is availble from database. Once the data is available the data is passed on to the function `ready()` which then redirects to all other visualization scripts.
+
+#### Carousel slider:
+> - The carousel slider is created dynamically with the data from flask. 
+> - It is animated to scroll through all the available year to select.
+> - Event listener, onclick() is associated with the button which has year as value.
+> - Onclick() the button, the year get fetched by the flask and redirects the json outputs to all the visualization scripts. It is in turn displayed as visuals for the user.
+
+#### Table-Line suplots:
+> - tableVisualization.js: 
+	> - if year is chosen, an object is created with country name and medal information and tableplotvisualization.js is invoked.
+	> - if country is chosen, an object is created with sports in which the countries participated and their medal information and tableplotvisualization.js is invoked.
+
+> - tableplotvisualization.js: Plots the Object into table format and the line plot with shared x-axes. The y-axes is plotted against the number gold, silver or bronze medal won by country or by all countries in a year.
+
+

@@ -1,0 +1,26 @@
+@app.route('/findMedal/')
+def findBy():
+    FIELDS3 = { 'NOC': True,
+            'Sport':True,
+            'Medal':True,
+             '_id': False
+    }
+
+    #data.year = request.args.get('year')
+    query = dataTable.find({'$and': [{'Year': {'$eq': int(data.year)}},{'Season': {'$eq': "Summer"}}]}, projection=FIELDS3)
+    #dataTable.find({'Year':int(year)}, projection=FIELDS2)
+       
+    json_projects = []
+    for project in query:
+        json_projects.append(project)
+        
+    print(json_projects)
+    json_projects = json.dumps(json_projects, default=json_util.default)
+    print(json_projects)
+    #connection.close()
+    return json_projects
+
+@app.route('/findTableByYear')#, methods=['POST'])
+def findTableByYear():
+    
+    return redirect("/findMedal/", code=302)

@@ -1,0 +1,27 @@
+---
+  title: "Back to School"
+output: html_document
+---
+  
+  ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Dependency
+```{r}
+library(tidyverse)
+
+sample_csv <-read_csv("students.csv")
+
+head(sample_csv)
+
+#schoolunique(sample_csv["school_name"])
+
+school_count <- unique(sample_csv$school_name)
+# Use length() to identify the number of schools
+length(school_count)
+
+```
+
+```{r}
+all_students <- union_all()

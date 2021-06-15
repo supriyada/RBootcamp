@@ -1,0 +1,170 @@
+dataTable.find({$and: [{Year: {$eq: int(year)}},{Season: {$eq: "Summer"}}]})
+
+dataTable.find({'Year':int(year)}, projection=FIELDS2)
+
+<button name="getYearBtn" type="submit" value='{{ logo_info[ns.counter].Year}}'>{{
+                            logo_info[ns.counter].Year }}</button>
+
+
+@app.route('/findBy')
+def findBy():
+    data.year = request.args.get('year')
+    query = dataTable.find({'$and': [{'Year': {'$eq': int(data.year)}},{'Season': {'$eq': "Summer"}}]}, projection=FIELDS2)
+    #dataTable.find({'Year':int(year)}, projection=FIELDS2)
+    
+    json_projects = []
+    for project in query:
+        json_projects.append(project)
+        
+    print(json_projects)
+    json_projects = json.dumps(json_projects, default=json_util.default)
+    #print(json_projects)
+    #connection.close()
+    return json_projects
+
+
+dataTable.aggregate([{
+    '$match': {
+        'Year': {
+            $eq: 1896
+        },
+        'Season': {
+            $eq: 'Summer'
+        }
+    }
+}, {
+    $group: {
+        {_id:{'NOC':"$NOC",Medal:"$Medal"},
+        Medal: {
+            $count: "$Medal"
+        },
+        user_id: {
+            $first: "$NOC"
+        }
+    }
+}, {
+    $match: {
+        Medal: {
+            $neq: "None"
+        }
+    }
+}])
+
+dataTable.aggregate([{
+    '$match': {
+        'Year': {
+            $eq: 1896
+        },
+        'Season': {
+            $eq: 'Summer'
+        }
+    }
+}, {
+    $group: {
+        {_id:{'NOC':"$NOC",Medal:"$Medal"},
+        Medal: {
+            $count: "$Medal"
+        }
+    }
+}, {
+    $match: {
+        Medal: {
+            $neq: "None"
+        }
+    }
+}])
+
+
+{'_id': 
+{'NOC': 'GER', 
+'Medal': 'Gold'}, 
+'Medal': 50}
+
+{'_id': {'NOC': 'DEN', 'Medal': 'None'}, 'Medal': 18}
+{'_id': {'NOC': 'AUT', 'Medal': 'Gold'}, 'Medal': 4}
+{'_id': {'NOC': 'USA', 'Medal': 'None'}, 'Medal': 14}
+{'_id': {'NOC': 'GER', 'Medal': 'Silver'}, 'Medal': 10}
+{'_id': {'NOC': 'DEN', 'Medal': 'Silver'}, 'Medal': 4}
+{'_id': {'NOC': 'FRA', 'Medal': 'None'}, 'Medal': 30}
+{'_id': {'NOC': 'FRA', 'Medal': 'Bronze'}, 'Medal': 4}
+{'_id': {'NOC': 'GRE', 'Medal': 'Silver'}, 'Medal': 36}
+{'_id': {'NOC': 'USA', 'Medal': 'Bronze'}, 'Medal': 4}
+
+
+[
+<tbody>
+<tr>
+<td align="center"><style data-mw-deduplicate="TemplateStyles:r886049734">.mw-parser-output .monospaced{font-family:monospace,monospace}</style><span class="monospaced">AFG</span></td>
+<td><img alt="" class="thumbborder" data-file-height="600" data-file-width="900" decoding="async" height="15" src="//upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Afghanistan.svg/22px-Flag_of_Afghanistan.svg.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Afghanistan.svg/33px-Flag_of_Afghanistan.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Afghanistan.svg/44px-Flag_of_Afghanistan.svg.png 2x" width="22"/> <a href="/wiki/Afghanistan_at_the_Olympics" title="Afghanistan at the Olympics">Afghanistan</a></td>
+<td></td>
+
+
+
+olympic_data_complete = db.top_channel_details_info.aggregate([
+   {
+     '$lookup':
+       {
+         'from': "top_channel_info",
+         'localField': "Channel_id",
+         'foreignField': "Channel_id",
+         'as': "details"
+       }
+  },
+  { '$unwind': "$details" },
+  {
+    '$project': {
+        "Channel_id": 1,
+        "Channel_title": 1,
+        "Category_id": "$details.Category_id",
+        "Category_name": "$details.Category_name",
+        "Created_date": 1,
+        "Video_count": 1,
+        "Views_count":1,
+        "Subscription_count": 1,
+        "Subscription_count_hidden": 1,
+        "Country": 1
+    }    
+  }
+])
+
+
+,
+  { '$unwind': "$details" },
+  {
+    '$project': {
+        "ID": 1,
+        "Name": 1,
+        "Sex": 1,
+        "Age": 1,
+        "Team": 1,
+        "Height": 1,
+        "Weight":1,
+        "NOC": 1,
+        "Games":1,
+        "Year": 1,
+        "Season": 1,
+        "City": 1,
+        "Sport": 1,
+        "Event":1,
+        "Medal": 1,
+        "Flag": "$details.FlagSrc",
+        "CountryName": "$details.CountryName"
+        
+    }    
+  }
+
+
+FRG
+West Germany
+//upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/22px-Flag_of_Germany.svg.png
+
+YUG
+Yugoslavia
+//upload.wikimedia.org/wikipedia/commons/thumb/6/61/Flag_of_Yugoslavia_%281946-1992%29.svg/22px-Flag_of_Yugoslavia_%281946-1992%29.svg.png
+
+GDR
+
+CRT
+WIF
+UNK
+NFL

@@ -1,0 +1,29 @@
+https://drive.google.com/drive/folders/1ZfnsJC9DmgX5dBObKLeBCvNUVE_9j_oI?usp=sharing
+
+https://docs.google.com/document/d/1xYAFKKpAOaNYvEO-8k8SjSNxQ5uSohwPGDDBsn9dum4/edit
+
+https://codepen.io/Chris_Nielsen/pen/YjxWLe --> slider with tooltip
+
+cluster:
+user: projectOlympics
+pwd: project123
+
+connection_String(R/W) : mongodb+srv://supriyaDA:Priya1008@supriyada.h7evx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+connection_String(R) : mongodb+srv://projectOlympics:project123@supriyada.h7evx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+https://link.medium.com/yc2UVFE8ygb  --> cluster read data
+
+db = client.Olympics_Data_db
+collection = db.athlete_record
+
+pip install Flask-Cors
+install dnspython
+
+231329 + 4 --> to update
+
+223251
+
+271,116 -- total records
+231329 + 4 -- with nan
+
+https://www.highcharts.com/demo/streamgraph

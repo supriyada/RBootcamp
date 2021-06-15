@@ -29,7 +29,8 @@ function makeResponsive() {
   var chartWidth = svgWidth - margin.left - margin.right;
 
     // create svg container
-  var svg = d3.select("body").append("svg")
+  var svg = d3.select("body")
+        .append("svg")
         .attr("height", svgHeight)
         .attr("width", svgWidth);
 
